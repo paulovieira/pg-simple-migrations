@@ -14,7 +14,7 @@ select jsonb_array_elements(t.diagnostics) from (
 ) t;
 ```
 
-TODO: create a inspection helper 
+TODO: create a inspection helper:
 
 ```sql
 select
@@ -38,14 +38,16 @@ order by id desc, rn_migration desc;
 select * from show_diagnostics()
 ```
 
-
+```sql
 select * from show_last()
+```
 
-after each migration is run, get a full inspection of the schema 
+after each migration is run, get a full inspection of the schema:
 
-pg_dump or with a tool like 
-psql --dbname=... --command="\d xyz"
-atlas
+- `pg_dump`
+- `psql --dbname=... --command="\d xyz"`
+- pgddl - DDL eXtractor functions for PostgreSQL (ddlx) https://github.com/lacanoid/pgddl
+- atlas - tool for managing and migrating database schemas using modern DevOps principles https://github.com/ariga/atlas
 
 
 find previous migrations:
